@@ -11,23 +11,23 @@ function App() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        const fetchItems = async () => {
+            try {
+                const URL = `${API_URL}${page}`;
+                const response = await fetch(URL);
+                const items = await response.json();
+                if (!response.ok) throw new Error("Fetch failed");
+                setItems(items);
+                setFetchError(null);
+            } catch (error) {
+                setFetchError(error.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
         (async () => await fetchItems())();
     }, [page]);
-
-    const fetchItems = async () => {
-        try {
-            const URL = `${API_URL}${page}`;
-            const response = await fetch(URL);
-            const items = await response.json();
-            if (!response.ok) throw new Error("Fetch failed");
-            setItems(items);
-            setFetchError(null);
-        } catch (error) {
-            setFetchError(error.message);
-        } finally {
-            setIsLoading(false);
-        }
-    };
 
     return (
         <div className="App">
