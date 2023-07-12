@@ -35,7 +35,7 @@ function App() {
             <main>
                 {isLoading && <p>Loading...</p>}
                 {fetchError && <p style={{ color: "red" }}>{`Error: ${fetchError}`}</p>}
-                {!fetchError && !isLoading && <Content items={items} />}
+                {!fetchError && !isLoading && <Content items={items} page={page} />}
             </main>
         </div>
     );

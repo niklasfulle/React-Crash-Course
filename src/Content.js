@@ -1,13 +1,15 @@
 import React from "react";
-import ListItem from "./ListItem";
+import TableHead from "./TableHead";
+import TableBody from "./TableBody";
 
-function Content({ items }) {
+function Content({ page, items }) {
+    const theadItems = Object.keys(items[0]);
+
     return (
-        <ul>
-            {items.map((item) => (
-                <ListItem key={item.id} item={item} />
-            ))}
-        </ul>
+        <table>
+            <TableHead theadItems={theadItems} />
+            <TableBody page={page} items={items} />
+        </table>
     );
 }
 
