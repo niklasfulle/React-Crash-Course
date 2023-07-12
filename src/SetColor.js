@@ -1,6 +1,7 @@
 import React from "react";
+import colorNames from "colornames";
 
-function SetColor({ colorString, setColorString }) {
+function SetColor({ colorString, setColorString, setHexValue, isDarkText, setIsDarkText }) {
     return (
         <form className="addColorForm" onSubmit={(e) => e.preventDefault}>
             <label htmlFor="addColor">Add Color</label>
@@ -11,8 +12,14 @@ function SetColor({ colorString, setColorString }) {
                 placeholder="Add color name"
                 required
                 value={colorString}
-                onChange={(e) => setColorString(e.target.value)}
+                onChange={(e) => {
+                    setColorString(e.target.value);
+                    setHexValue(colorNames(e.target.value));
+                }}
             />
+            <button type="button" onClick={() => setIsDarkText(!isDarkText)}>
+                Toggle Text Color
+            </button>
         </form>
     );
 }
