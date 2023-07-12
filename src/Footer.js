@@ -1,11 +1,9 @@
 import React from "react";
 
-function Footer({ length }) {
+function Footer() {
     return (
         <footer>
-            <p>
-                {length} List {length === 1 ? "Item" : "Items"}
-            </p>
+            <h1>Footer</h1>
         </footer>
     );
 }

@@ -8,8 +8,4 @@ function Header({ title }) {
     );
 }
 
-Header.defaultProps = {
-    title: "Shopping List",
-};
-
 export default Header;
