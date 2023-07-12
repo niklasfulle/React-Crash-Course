@@ -1,15 +1,13 @@
 import React from "react";
-import ItemList from "./ItemList";
+import ListItem from "./ListItem";
 
-function Content({ items, handleCheck, handleDelete, fetchError }) {
+function Content({ items }) {
     return (
-        <>
-            {items.length ? (
-                <ItemList items={items} handleCheck={handleCheck} handleDelete={handleDelete} />
-            ) : (
-                <p style={{ marginTop: "2em" }}>No items in the list</p>
-            )}
-        </>
+        <ul>
+            {items.map((item) => (
+                <ListItem key={item.id} item={item} />
+            ))}
+        </ul>
     );
 }
 

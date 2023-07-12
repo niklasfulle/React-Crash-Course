@@ -1,15 +1,14 @@
 import React from "react";
+import HeaderButton from "./HeaderButton";
 
-function Header({ title }) {
+function Header({ page, setPage }) {
     return (
         <header>
-            <h1>{title}</h1>
+            <HeaderButton title="Users" page="users" activePage={page} setPage={setPage} />
+            <HeaderButton title="Posts" page="posts" activePage={page} setPage={setPage} />
+            <HeaderButton title="Comments" page="comments" activePage={page} setPage={setPage} />
         </header>
     );
 }
-
-Header.defaultProps = {
-    title: "Shopping List",
-};
 
 export default Header;
