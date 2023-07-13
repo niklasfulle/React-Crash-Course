@@ -2,13 +2,15 @@ import Layout from "./Layout";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import PostPage from "./PostPage";
+import EditPost from "./EditPost";
 import About from "./About";
 import Missing from "./Missing";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import api from "./api/post";
-import EditPost from "./EditPost";
+import useWindowSize from "./hooks/useWindowSize";
+import useAxiosFetch from "./hooks/useAxiosFetch";
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -19,19 +21,13 @@ function App() {
     const [editTitle, setEditTitle] = useState("");
     const [editBody, setEditBody] = useState("");
     const navigate = useNavigate();
+    const { width } = useWindowSize();
+
+    const { data, loading, error } = useAxiosFetch("http://localhost:3500/posts");
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                const response = await api.get("/posts");
-                if (response && response.data) setPosts(response.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchPosts();
-    }, []);
+        setPosts(data);
+    }, [data]);
 
     useEffect(() => {
         const filteredResults = posts.filter(
@@ -103,8 +99,14 @@ function App() {
 
     return (
         <Routes>
-            <Route path="/" element={<Layout search={search} setSearch={setSearch} />}>
-                <Route index element={<Home posts={searchResults} />} />
+            <Route
+                path="/"
+                element={<Layout search={search} setSearch={setSearch} width={width} />}
+            >
+                <Route
+                    index
+                    element={<Home posts={searchResults} error={error} loading={loading} />}
+                />
             </Route>
             <Route path="post" element={<Layout search={search} setSearch={setSearch} />}>
                 <Route
