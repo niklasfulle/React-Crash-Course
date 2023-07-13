@@ -12,7 +12,13 @@ function PostPage({ posts, handleDelete }) {
                         <h2>{post.title}</h2>
                         <p className="postDate">{post.datetime}</p>
                         <p className="postBody">{post.body}</p>
-                        <button onClick={() => handleDelete(post.id)}>Delete</button>
+                        <button className="deleteButton" onClick={() => handleDelete(post.id)}>
+                            Delete
+                        </button>
+
+                        <Link to="edit">
+                            <button className="editButton">Edit</button>
+                        </Link>
                     </>
                 )}
                 {!post && (

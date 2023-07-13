@@ -18,11 +18,11 @@ const Nav = ({ search, setSearch }) => {
                     <li>Home</li>
                 </Link>
 
-                <Link to="post">
+                <Link to="/post">
                     <li>New Post</li>
                 </Link>
 
-                <Link to="about">
+                <Link to="/about">
                     <li>About</li>
                 </Link>
             </ul>

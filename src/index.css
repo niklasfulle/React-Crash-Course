@@ -82,6 +82,7 @@ nav {
     min-height: 48px;
     font-size: 1rem;
     padding: 0.25rem;
+    padding-left: 1em;
     border-radius: 0.25rem;
     outline: none;
 }
@@ -134,6 +135,7 @@ nav li:focus a {
 
 .Home,
 .NewPost,
+.EditPost,
 .PostPage,
 .About,
 .Missing {
@@ -176,17 +178,21 @@ nav li:focus a {
     margin: 1rem 0;
 }
 
-.newPostForm {
+.newPostForm,
+.editPostForm {
     display: flex;
     flex-direction: column;
 }
 
-.newPostForm label {
+.newPostForm label,
+.editPostForm label {
     margin-top: 1rem;
 }
 
 .newPostForm input[type="text"],
-.newPostForm textarea {
+.editPostForm input[type="text"],
+.newPostForm textarea,
+.editPostForm textarea {
     font-family: "Open Sans", sans-serif;
     width: 100%;
     min-height: 48px;
@@ -197,12 +203,19 @@ nav li:focus a {
     outline: none;
 }
 
-.newPostForm textarea {
+.newPostForm textarea,
+.editPostForm textarea {
     height: 100px;
     resize: none;
 }
 
-.newPostForm button {
+.EditPost h2,
+.EditPost p {
+    margin-bottom: 1rem;
+}
+
+.newPostForm button,
+.editPostForm button {
     margin-top: 1rem;
     height: 48px;
     min-width: 48px;
@@ -210,6 +223,15 @@ nav li:focus a {
     padding: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
+    width: calc(100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.newPostForm button:hover,
+.editPostForm button:hover {
+    background-color: #bbbbbb;
 }
 
 .Missing h2,
@@ -219,7 +241,7 @@ nav li:focus a {
     margin-bottom: 1rem;
 }
 
-.PostPage button {
+.deleteButton {
     height: 48px;
     min-width: 48px;
     border-radius: 0.25rem;
@@ -228,6 +250,32 @@ nav li:focus a {
     background-color: red;
     color: #fff;
     cursor: pointer;
+    width: 5em;
+}
+
+.deleteButton:hover {
+    background-color: rgb(212, 11, 11);
+}
+
+.PostPage a {
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+.editButton {
+    height: 48px;
+    min-width: 48px;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #66d8f5;
+    color: #fff;
+    cursor: pointer;
+    width: 5em;
+}
+
+.editButton:hover {
+    background-color: #26bfe6;
 }
 
 .statusMsg {
@@ -271,7 +319,8 @@ nav li:focus a {
         margin-left: 0.5rem;
     }
 
-    .newPostForm textarea {
+    .newPostForm textarea,
+    .editPostForm textarea {
         height: 300px;
     }
 }
