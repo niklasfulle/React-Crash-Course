@@ -3,14 +3,14 @@ import axios from "axios";
 
 const useAxiosFetch = (url) => {
     const [data, setData] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [fetchError, setFetchError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         let mounted = true;
         const source = axios.CancelToken.source();
         const fetchData = async () => {
-            setLoading(true);
+            setIsLoading(true);
             try {
                 const response = await axios.get(url, {
                     cancelToken: source.token,
@@ -20,14 +20,14 @@ const useAxiosFetch = (url) => {
                 }
             } catch (error) {
                 if (mounted) {
-                    setError(error);
+                    setFetchError(fetchError);
                 }
             } finally {
                 if (mounted) {
-                    setLoading(false);
+                    setIsLoading(false);
                 }
             }
-            setLoading(false);
+            setIsLoading(false);
         };
 
         fetchData(url);
@@ -37,9 +37,9 @@ const useAxiosFetch = (url) => {
             mounted = false;
             source.cancel();
         };
-    }, [url]);
+    }, [url, fetchError]);
 
-    return { data, error, loading };
+    return { data, fetchError, isLoading };
 };
 
 export default useAxiosFetch;
