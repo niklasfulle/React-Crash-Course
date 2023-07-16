@@ -4,6 +4,21 @@
       "id": 1,
       "checked": false,
       "item": "Cookie"
+    },
+    {
+      "id": 2,
+      "checked": false,
+      "item": "Milk"
+    },
+    {
+      "id": 3,
+      "checked": false,
+      "item": "Pizza"
+    },
+    {
+      "id": 4,
+      "checked": false,
+      "item": "Pasta"
     }
   ]
 }
