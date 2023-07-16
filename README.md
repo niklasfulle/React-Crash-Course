@@ -91,7 +91,7 @@ npm start
     <table>
       <tr>
     	    <td style="padding:10px">
-        	    <img src="docs/screenshots/groceries-list.png" width="500"/>
+        	    <img src="docs/screenshots/groceries-list.png" width="600"/>
               <br>
               <em>Grocery List</em>
       	    </td>
