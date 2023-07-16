@@ -31,6 +31,7 @@ This is a React project that I am using to learn React. As projects are build a 
 | axios            | 1.4.0   | [Link](axios-http.com)                                 |
 | React Icons      | 4.10.1  | [Link](https://react-icons.github.io/react-icons/)     |
 | json-server      | 0.17.3  | [Link](https://www.npmjs.com/package/json-server)      |
+| easy-peasy       | 6.0.1   | [Link](https://easy-peasy.now.sh/)                     |
 
 ## Installation Grocery List
 
