@@ -2,21 +2,15 @@
   "posts": [
     {
       "id": 1,
-      "title": "test",
-      "datetime": "July 13, 2023 08:23:51 PM",
-      "body": "test"
+      "title": "Test Post",
+      "datetime": "July 16, 2023 09:50:06 PM",
+      "body": "This is a test post. :D"
     },
     {
       "id": 2,
-      "title": "test",
-      "datetime": "July 13, 2023 08:23:54 PM",
-      "body": "tset"
-    },
-    {
-      "id": 3,
-      "title": "tests",
-      "datetime": "July 13, 2023 08:23:56 PM",
-      "body": "tset"
+      "title": "This also",
+      "datetime": "July 16, 2023 09:51:12 PM",
+      "body": "This is a test post too"
     }
   ]
 }
