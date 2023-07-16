@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { StoreProvider } from "easy-peasy";
 import store from "./stores/store";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
     <React.StrictMode>
         <StoreProvider store={store}>
             <BrowserRouter>
@@ -15,6 +18,5 @@ ReactDOM.render(
                 </Routes>
             </BrowserRouter>
         </StoreProvider>
-    </React.StrictMode>,
-    document.getElementById("root")
+    </React.StrictMode>
 );
