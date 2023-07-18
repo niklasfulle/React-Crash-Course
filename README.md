@@ -3,6 +3,7 @@
 ## Table of Contents
 
 -   [Description](#description)
+-   [Branches](#branches)
 -   [Dependencies Grocery List](#dependencies-grocery-list)
 -   [Dependencies Blog](#dependencies-blog)
 -   [Installation Grocery List](#installation-grocery-list)
@@ -12,6 +13,16 @@
 ## Description
 
 This is a React project that I am using to learn React. As projects are build a Groceries List and a blog. The Grocery List is a simple list of groceries that can be added and removed. The blog is a simple blog that can be used to add, updated and remove posts. Both are using a json-server as a backend.
+
+## Branches
+
+| Name              | Use                                                     |
+| ----------------- | ------------------------------------------------------- |
+| main              | The main branch that contains all chapters.             |
+| Blog              | The branch that contains the Blog project.              |
+| Grocery-List      | The branch that contains the Grocery List project.      |
+| Fetch-Challenge   | The branch that contains the Fetch Challenge project.   |
+| Project-Challenge | The branch that contains the Project Challenge project. |
 
 ## Dependencies Grocery List
 
